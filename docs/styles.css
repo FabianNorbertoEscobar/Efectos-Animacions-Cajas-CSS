@@ -1,0 +1,1042 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body {
+	font-family: 'Architects Daughter', cursive;
+	background-color: #91C0FE;
+}
+
+h1 {
+	color: blue;
+}
+
+div{
+    width: 20%;
+    height: 100px;
+    margin: 3% 5%;
+    display: inline-block;
+    background: #FED532;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 480px){
+    h1{
+        color: blue;
+    }
+}
+
+
+@media screen and (min-width: 767px){
+    div{
+        width: 17%;
+        margin: 3%;
+    }
+}
+
+@media screen and (min-width: 950px){
+    div{
+        width: 10%;
+        margin: 1.5%;
+    }
+    
+}
+
+.triangulo-movible {
+	transform: translateX(0);
+}
+
+.triangulo-movible:before {
+	content: '';
+	transition-duration: 0.3s;
+	border-style:  solid;
+	border-width: 15px 15px 15px 0px;
+	border-color: transparent #FED532 transparent transparent;
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	margin-top: -15px;
+}
+
+.triangulo-movible:hover:before {
+	left: -13px;
+}
+
+.triangulo-fijo {
+	transform: translateX(0);
+	transition-duration: 0.3s;
+}
+
+.triangulo-fijo:before {
+	content: '';
+	transition-duration: 0.3s;
+	border-style:  solid;
+	border-width: 0px 15px 15px 15px;
+	border-color: transparent transparent #FED532 transparent;
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 50%;
+	margin-left: -15px;
+}
+
+.triangulo-fijo:hover {
+	transform: translateY(15px);
+}
+
+.triangulo-fijo:hover:before {
+	top: -13px;
+}
+
+.levantar-esquina-pagina {
+	transform: translateX(0);
+}
+
+.levantar-esquina-pagina:before {
+	content: '';
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 0px;
+	height: 0px;
+	background: linear-gradient(
+		45deg, #91C0FE 45%, #aaa 50%,
+		#ccc 60%, white
+	);
+	transition-duration: 0.3s;
+}
+
+.levantar-esquina-pagina:hover:before {
+	width: 35px;
+	height: 35px;
+}
+
+.sombra-fija {
+	transform: translateX(0);	
+}
+
+.sombra-fija:before {
+	content: '';
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: 100%;
+	height: 10px;
+	background: -webkit-radial-gradient(
+		center, ellipse,
+		rgba(0,0,0,0.35) 0%,
+		rgba(0,0,0,0) 80%);
+	transition-duration: 0.3s;
+	opacity: 0;
+}
+
+.sombra-fija:hover {
+	transform: translateY(-5px);
+}
+
+.sombra-fija:hover:before{
+	transform: translateY(5px);
+	opacity: 1;
+}
+
+.sombra-difuminada {
+	box-shadow: 0px 0px 1px rgba(0,0,0,1);
+	transition-duration: 0.3s;
+}
+
+.sombra-difuminada:hover {
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+}
+
+.sombra-radial {
+	position: relative;
+	box-shadow: 0px 0px 1px black;
+}
+
+.sombra-radial:before,.sombra-radial:after {
+	content: '';
+	position: absolute;
+	width: 90%;
+	height: 5px;
+	left: 5%;
+	opacity: 0;
+	transition-duration: 0.3s;
+}
+
+.sombra-radial:before {
+	bottom: 100%;
+	background: -webkit-radial-gradient(
+		center, ellipse,
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0) 80%);
+}
+
+.sombra-radial:after {
+	top: 100%;
+	background: -webkit-radial-gradient(
+		center, ellipse,
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0) 80%);
+}
+
+.sombra-radial:hover:before,
+.sombra-radial:hover:after {
+	opacity: 1;
+}
+
+.sombra-externa{
+	box-shadow: 0px 0px 1px black;
+	transition-duration: 0.3s;
+}
+
+.sombra-externa:hover{
+	box-shadow: 2px 3px 3px black;
+}
+
+.iluminacion:hover {
+	background: white;
+}
+
+.transparencia:hover {
+	opacity: 0.5
+}
+
+.resalte-borde{
+	box-shadow: inset 0 0 0 4px #ddd;
+	transition-duration: 0.3s;
+}
+
+.resalte-borde:hover{
+	box-shadow: inset 0 0 0 4px #555;
+}
+
+.borde-interno{
+	position: relative;
+}
+
+.borde-interno:before {
+	content: '';
+	position: absolute;
+	border:  2px solid white;
+	top: 4px;
+	bottom: 4px;
+	left:  4px;
+	right: 4px;
+	opacity: 0;
+}
+
+.borde-interno:hover:before {
+	opacity: 1;
+}
+
+.expansion-borde {
+	position: relative;
+}
+
+.expansion-borde:before {
+	content: '';
+	position: absolute;
+	border: 2px solid white;
+	top:  0px;
+	bottom: 0px;
+	left:  0px;
+	right: 0px;
+	transition-duration: 0.3s;
+}
+
+.expansion-borde:hover:before {
+	top: -8px;
+	bottom: -8px;
+	left: -8px;
+	right: -8px;
+}
+
+.recogida-borde {
+	position: relative;
+}
+
+.recogida-borde:before {
+	content: '';
+	position: absolute;
+	border: 2px solid white;
+	top:  -16px;
+	bottom: -16px;
+	left:  -16px;
+	right: -16px;
+	opacity: 0;
+	transition-duration: 0.3s;
+}
+
+.recogida-borde:hover:before {
+	top: -8px;
+	bottom: -8px;
+	left: -8px;
+	right: -8px;
+	opacity: 1;
+}
+
+.redondear-esquinas {
+	transition-duration: 0.2s;
+}
+
+.redondear-esquinas:hover {
+	border-radius: 20px;
+}
+
+.redondear-esquinas-opuestas {
+	transition-duration: 0.2s;
+}
+
+.redondear-esquinas-opuestas:hover {
+	border-radius: 30px 0px;
+}
+
+.elipse {
+	transition-duration: 0.2s;
+}
+
+.elipse:hover {
+	border-radius: 100%;
+}
+
+.borde-inferior {
+	position: !important;
+	transition-duration: 0.3s;
+}
+
+.borde-inferior:hover {
+	border-bottom: 5px solid orange;
+	height: 95px;
+	transform: translateY(-5px);	
+}
+
+.gradiente {
+	transition-duration: 0.3s;
+}
+
+.gradiente:hover {
+	background: linear-gradient(
+		45deg, #FED532 20%, #FEE645 25%, orange 50%,
+		#FE9545 60%, white
+	);
+}
+
+.flash:hover {
+	animation: 0.7s flash 1;
+}
+
+@keyframes flash {
+	25%,75%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+}
+
+.click:hover {
+	animation: 0.7s click 1;
+}
+
+@keyframes click {
+	25%,75%{
+		transform: scale(0.8);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+}
+
+.chicle:hover {
+	animation: 0.7s chicle 1;
+}
+
+@keyframes chicle {
+	30%{
+		transform: scaleX(1.25) scaleY(0.75);
+	}
+	50%{
+		transform: scaleX(0.75) scaleY(1.25);
+	}
+	60%{
+		transform: scaleX(1.15) scaleY(0.85);
+	}	
+}
+
+.vibracion:hover {
+	animation: 0.7s vibracion infinite;
+}
+
+@keyframes vibracion {
+	10%,30%,50%,70%,90%{
+		transform: translateX(-10px);
+	}
+	20%,40%,60%,80%{
+		transform: translateX(10px);
+	}
+	5%,25%,45%,65%,85%{
+		transform: translateY(-10px);
+	}
+	15%,35%,55%,75%,95%{
+		transform: translateY(10px);
+	}
+}
+
+.pendulo:hover{
+	animation: 1s pendulo 1;
+	transform-origin: top center;
+}
+
+@keyframes pendulo{
+	20%{
+		transform: rotate(15deg);
+	}
+	40%{
+		transform: rotate(-10deg);
+	}
+	60%{
+		transform: rotate(5deg);
+	}
+	80%{
+		transform: rotate(-3deg);
+	}
+}
+
+.inclinacion:hover{
+	animation: 1s inclinacion 1;
+}
+
+@keyframes inclinacion{
+	20%{
+		transform: rotate(15deg);
+	}
+}
+
+.balanceo:hover {
+	animation: 1s balanceo 1;
+}
+
+@keyframes balanceo{
+	20%{
+		transform: scale(0.7) rotate(-6deg);
+	}
+	30%,70%{
+		transform: scale(1.1) rotate(6deg);
+	}
+	50%,90%{
+		transform: scale(1.1) rotate(-6deg);
+	}	
+}
+
+.vaiven:hover {
+	animation: 1s vaiven 1;
+}
+
+@keyframes vaiven{
+	15%{
+		transform: rotate(-10deg) translateX(-25%);
+	}
+	30%{
+		transform: rotate(5deg) translateX(20%);
+	}
+	45%{
+		transform: rotate(-3deg) translateX(-10%);
+	}
+	60%{
+		transform: rotate(2deg) translateX(5%);
+	}
+	75%{
+		transform: rotate(-1deg) translateX(-3%);
+	}
+}
+
+.descolgado:hover{
+	animation: 1s descolgado 1;
+	transform-origin: top left;
+}
+
+@keyframes descolgado{
+	20%,60%{
+		transform: rotate(80deg);
+	}
+	40%{
+		transform: rotate(60deg);
+	}
+	80%{
+		transform: rotate(60deg);
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(400px);
+		opacity: 0;
+	}
+}
+
+.caida:hover{
+	animation: 0.5s caida 1;
+}
+
+@keyframes caida{
+	10%{
+		transform: translateY(50px);
+		opacity: 1;
+	}
+	20%{
+		transform: translateY(100px);
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(400px);
+		opacity: 0;
+	}
+}
+
+.despegue:hover{
+	animation: 0.5s despegue 1;
+}
+
+@keyframes despegue{
+	10%{
+		transform: translateY(-50px);
+		opacity: 1;
+	}
+	20%{
+		transform: translateY(-100px);
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(-400px);
+		opacity: 0;
+	}
+}
+
+.entrada-deslizando:hover{
+	animation: 1s entradaDeslizando 1;
+}
+
+@keyframes entradaDeslizando{
+	5%{
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+}
+
+.salida-deslizando:hover{
+	transform: translateX(100%);
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+
+.entrada-rodando:hover{
+	animation: 1s entradaRodando 1;
+}
+
+@keyframes entradaRodando{
+	5%{
+		opacity: 0;
+		transform: translateX(-100%) rotate(-260deg);
+	}
+}
+
+.salida-rodando:hover{
+	animation: 1s salidaRodando 1;
+}
+
+@keyframes salidaRodando{
+	100%{
+		opacity: 0;
+		transform: translateX(100%) rotate(260deg);
+	}
+}
+
+.rebote:hover {
+	animation: 1s rebote 1;
+}
+
+@keyframes rebote{
+	20%,50%,80%{
+		transform: translateY(0px);
+	}
+	40%{
+		transform: translateY(-45px);
+	}
+	60%{
+		transform: translateY(-25px);
+	}
+}
+
+.rebote-pelota:hover {
+	animation: 1s rebotePelota 1;
+}
+
+@keyframes rebotePelota{
+	5%{
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	50%{
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	70%{
+		transform: scale(0.9);
+	}
+}
+
+.rebote-izquierdo:hover {
+	animation: 0.5s reboteIzquierda 1;
+}
+
+@keyframes reboteIzquierda{
+	1%{
+		opacity: 0;
+		transform: translateX(-2000px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(30px);
+	}
+	70%{
+		opacity: 1;
+		transform: translateX(-10px);
+	}
+}
+
+.rebote-derecho:hover {
+	animation: 0.5s reboteDerecho 1;
+}
+
+@keyframes reboteDerecho{
+	1%{
+		opacity: 0;
+		transform: translateX(40px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(-30px);
+	}
+	70%{
+		opacity: 1;
+		transform: translateX(10px);
+	}
+}
+
+.rebote-arriba:hover {
+	animation: 0.5s reboteArriba 1;
+}
+
+@keyframes reboteArriba{
+	1%{
+		opacity: 0;
+		transform: translateY(-2000px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateY(30px);
+	}
+	70%{
+		opacity: 1;
+		transform: translateY(-10px);
+	}
+}
+
+.rebote-abajo:hover {
+	animation: 0.5s reboteAbajo 1;
+}
+
+@keyframes reboteAbajo{
+	1%{
+		opacity: 0;
+		transform: translateY(2000px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateY(-30px);
+	}
+	70%{
+		opacity: 1;
+		transform: translateY(10px);
+	}
+}
+
+.hundimiento-hacia-atras:hover{
+	animation: 1s hundimiento-hacia-atras 1;
+}
+
+@keyframes hundimiento-hacia-atras{
+	25%{
+		transform: scale(0.9);
+	}
+	50%{
+		opacity: 1;
+		transform: scale(1.1);
+	}
+	100%{
+		opacity: 0;
+		transform: scale(0);
+	}
+}
+
+.giro:hover{
+	animation: 0.7s giro 1;
+}
+
+@keyframes giro{
+	0%{
+		transform: rotate(360deg);
+	}
+}
+
+.vueltas:hover{
+	animation: 1s vueltas infinite;
+}
+
+@keyframes vueltas{
+	0%{
+		transform: rotate(360deg);
+	}
+}
+
+.revolucion:hover{
+	animation: 0.2s revolucion infinite;
+}
+
+@keyframes revolucion{
+	0%{
+		transform: rotate(-360deg);
+	}
+}
+
+.aparicion:hover{
+	animation: 2s aparicion 1;
+}
+
+@keyframes aparicion{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.8;
+	}
+}
+
+.aparicion-base{
+	position: relative;
+	overflow: hidden;
+}
+
+.aparicion-tapa:hover {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	left: 100%;
+	top: 0%;
+	position: absolute;
+	background: white;
+	z-index: 10;
+	background: #91C0FE;
+	animation: 2s aparicionTapa 1;
+}
+
+@keyframes aparicionTapa{
+	0%{
+		left: 0%;
+	}
+}
+
+.aparicion-tapa p{
+	position: absolute;
+	top: 0% !important;
+	left: 0% !important;
+}
+
+.llegada-rapida:hover {
+	animation: 0.5s llegadaRapida 1;
+}
+
+@keyframes llegadaRapida{
+	1%{
+		opacity: 0;
+		transform: translateX(-200%) skew(30deg);
+	}
+	60%{
+		opacity: 1;
+		transform: translateX(-20%) skew(-30deg);
+	}
+	80%{
+		transform: translateX(0%) skew(15deg);
+	}	
+}
+
+.retrocedida-rapida:hover {
+	animation: 1s retrocedidaRapida 1;
+}
+
+@keyframes retrocedidaRapida{
+	15%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateX(-500px) skewX(-70deg);
+		opacity: 0;
+	}
+}
+
+.volada-rapida:hover {
+	animation: 0.7s voladaRapida 1;
+}
+
+@keyframes voladaRapida{
+	15%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateX(-500px) skewY(-80deg);
+		opacity: 0;
+	}
+}
+
+.salida-volando:hover {
+	animation: 1s salidaVolando 1;
+}
+
+@keyframes salidaVolando{
+	15%{
+		opacity: 1;
+	}
+	100%{
+		transform: translateX(500px) translateY(-500px) skewY(-70deg);
+		opacity: 0;
+	}
+}
+
+.colgando-desde-punta:hover {
+	transform-origin: 100% bottom;
+	animation: 1s colgando-desde-punta 1;
+}
+
+@keyframes colgando-desde-punta{
+	5%{
+		opacity: 0;
+		transform: rotate(-100deg);
+	}
+}
+
+.giro-x-3d:hover {
+	animation: 1s giroX3D 1;
+	backface-visibility: visible;
+}
+
+@keyframes giroX3D{
+	1%{
+		opacity: 0.5;
+		transform: perspective(200px) rotateX(90deg);
+	}
+	40%{
+		transform: perspective(200px) rotateX(-20deg);
+	}
+	70%{
+		transform: perspective(200px) rotateX(20deg);
+	}
+}
+
+.giro-y-3d:hover {
+	animation: 1s giroY3D 1;
+	backface-visibility: visible;
+}
+
+@keyframes giroY3D{
+	1%{
+		opacity: 0.5;
+		transform: perspective(200px) rotateY(90deg);
+	}
+	40%{
+		transform: perspective(200px) rotateY(-20deg);
+	}
+	70%{
+		transform: perspective(200px) rotateY(20deg);
+	}
+}
+
+.ponerse-de-costado:hover{
+	animation: 1s ponerseDeCostado 1;
+}
+
+@keyframes ponerseDeCostado{
+	100%{
+		opacity: 0.3;
+		transform: perspective(100px) rotateY(90deg);
+	}
+}
+
+.acostarse:hover{
+	animation: 1s acostarse 1;
+}
+
+@keyframes acostarse{
+	100%{
+		opacity: 0.3;
+		transform: perspective(100px) rotateX(90deg);
+	}
+}
+
+.acostarse-hacia-adelante:hover{
+	animation: 1s acostarseHaciaAdelante 1;
+}
+
+@keyframes acostarseHaciaAdelante{
+	100%{
+		opacity: 0.3;
+		transform: perspective(100px) rotateX(-90deg);
+	}
+}
+
+.rotacion-hacia-adelante:hover{
+	animation: 1s rotacionHaciaAdelante 1;
+	backface-visibility: visible;
+}
+
+@keyframes rotacionHaciaAdelante{
+	40%{
+		transform: perspective(100px) rotateY(170deg) translateZ(120px);
+	}
+	50%{
+		transform: perspective(100px) rotateY(190deg) translateZ(120px);
+	}
+	80%{
+		transform: perspective(300px) rotateY(360deg);
+	}
+	100%{
+		transform: perspective(300px) rotateY(360deg);
+	}
+}
+
+.giro-hacia-adelante:hover{
+	animation: 1s giroHaciaAdelante 1;
+	backface-visibility: visible;
+}
+
+@keyframes giroHaciaAdelante{
+	40%{
+		transform: perspective(100px) translateZ(30px) rotateY(170deg);
+	}
+	50%{
+		transform: perspective(100px) translateZ(45px) rotateY(190deg);
+	}
+	80%{
+		transform: perspective(100px) rotateY(360deg);
+	}
+	100%{
+		transform: perspective(100px) rotateY(360deg);
+	}
+}
+
+.paralelogramo:hover {
+	animation: 1s paralelogramo 1;
+}
+
+@keyframes paralelogramo{
+	1%{
+		opacity: 0;
+		transform: skew(30deg);
+	}
+	60%{
+		opacity: 1;
+		transform: skew(-30deg);
+	}
+	80%{
+		transform: skew(15deg);
+	}	
+}
+
+.sesgos:hover {
+	animation: 1s sesgos 1;
+}
+
+@keyframes sesgos{
+	1%{
+		opacity: 0;
+		transform: skewY(400deg) skewX(70deg);
+	}
+	60%{
+		opacity: 1;
+		transform: skewY(-60deg);
+	}
+	80%{
+		transform: skewY(45deg);
+	}	
+	90%{
+		transform: skewX(35deg);
+	}	
+}
+
+.traslaciones:hover {
+	animation: 1s traslaciones 1;
+}
+
+@keyframes traslaciones{
+	1%{
+		opacity: 0;
+		transform: translate3d(10px, 20px, 30px);
+	}
+	40%{
+		transform: translate3d(50px, -60px, -70px);
+	}	
+	50%{
+		transform: translate3d(-40px, -60px, 90px);
+	}	
+	80%{
+		transform: translate3d(50px, 60px, 70px);
+	}	
+	50%{
+		transform: translate3d(-40px, 30px, -10px);
+	}	
+}
+
+.enloquecido:hover {
+	animation: 0.6s enloquecido infinite;
+}
+
+@keyframes enloquecido{
+	1%%, 30%{
+		opacity: 0;
+		transform: translate3d(10px, 20px, 30px);
+	}
+	40%, 70%{
+		transform: translate3d(50px, -60px, -70px);
+	}	
+	50%, 95%{
+		transform: translate3d(-40px, -60px, 90px);
+	}	
+	80%, 20%{
+		transform: translate3d(50px, 60px, 70px);
+	}	
+	50%, 90%{
+		transform: translate3d(-40px, 30px, -10px);
+	}	
+}
+
+.baile-girasol:hover {
+	animation: 2s baileGirasol infinite;
+}
+
+@keyframes baileGirasol{
+	1%,75%{
+		transform: skewX(-30deg) translateX(30px);
+	}
+	25%{
+		transform: skewX(0deg) translateX(0px);
+	}
+	50%{
+		transform: skewX(30deg) translateX(-20px);
+	}
+}
+
+.achatamiento:hover {
+	animation: 0.7s achatamiento 1;
+}
+
+@keyframes achatamiento {
+	30%,100%{
+		transform: scaleX(2) scaleY(0.001);
+	}	
+}
